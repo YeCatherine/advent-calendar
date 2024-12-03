@@ -1,5 +1,6 @@
 import { calculateTotalDistance } from "./first-task";
 import { countSafeReports } from "./second/solution";
+import { processMalformedData } from "./third/solution";
 import { data as secondData } from "./second/data";
 
 // First task
@@ -11,3 +12,8 @@ console.log(`The total distance between the lists is: ${result}`);
 
 // Answer 2
 console.log(`Answer 2 | The number of safe reports is: ${countSafeReports(secondData)}`);
+
+// Answer 3
+const filePath = "./src/third/data.txt";
+console.log(`Answer 3 | The result of multiplication is: ${processMalformedData(filePath)}`);
+
