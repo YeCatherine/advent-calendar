@@ -1059,4 +1059,4 @@ export function calculateTotalDistance (leftList: number[], rightList: number[])
 }
 
 const result = calculateTotalDistance(left, right);
-console.log(`Answer: the total distance between the final inputs is: ${result}`);
+console.log(`Answer 1 | the total distance between the final inputs is: ${result}`);
