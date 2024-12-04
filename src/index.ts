@@ -2,6 +2,7 @@ import { calculateTotalDistance } from "./first-task";
 import { countSafeReports } from "./second/solution";
 import { processMalformedData } from "./third/solution";
 import { data as secondData } from "./second/data";
+import { totalXmas } from "./fourth/solution";
 
 // First task
 const leftList = [3, 4, 2, 1, 3, 3];
@@ -17,3 +18,5 @@ console.log(`Answer 2 | The number of safe reports is: ${countSafeReports(second
 const filePath = "./src/third/data.txt";
 console.log(`Answer 3 | The result of multiplication is: ${processMalformedData(filePath)}`);
 
+// Answer 4
+console.log(`Answer 4 | The total XMAS found is: ${totalXmas}`);
