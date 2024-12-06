@@ -3,7 +3,8 @@ import { countSafeReports } from "./second/solution";
 import { processMalformedData } from "./third/solution";
 import { data as secondData } from "./second/data";
 import { totalXmas } from "./fourth/solution";
-import { example, result as fifthResult } from "./fifth/solution";
+import { result as fifthResult } from "./fifth/solution";
+import { result as sixthResult } from "./sixth/solution";
 
 // First task
 const leftList = [3, 4, 2, 1, 3, 3];
@@ -23,5 +24,7 @@ console.log(`Answer 3 | The result of multiplication is: ${processMalformedData(
 console.log(`Answer 4 | The total XMAS found is: ${totalXmas}`);
 
 // Answer 5
-console.log(`The sum of middle pages is: ${example}`);
 console.log(`The sum of middle pages is: ${fifthResult}`);
+
+// Answer 6
+console.log(`The number of distinct positions visited is: ${sixthResult}`);
