@@ -25,6 +25,7 @@ const findGuard = (map: string[][]): { position: [number, number]; direction: nu
       }
     }
   }
+  throw new Error("Guard not found on the map");
 };
 
 // Simulate the guard's patrol

@@ -5,13 +5,14 @@ import { data as secondData } from "./second/data";
 import { totalXmas } from "./fourth/solution";
 import { result as fifthResult } from "./fifth/solution";
 import { result as sixthResult } from "./sixth/solution";
+import { count } from "./sixth/two/solution";
 
 // First task
 const leftList = [3, 4, 2, 1, 3, 3];
 const rightList = [4, 3, 5, 3, 9, 3];
 
 const result = calculateTotalDistance(leftList, rightList);
-console.log(`The total distance between the lists is: ${result}`);
+console.log(`Answer 1 |The total distance between the lists is: ${result}`);
 
 // Answer 2
 console.log(`Answer 2 | The number of safe reports is: ${countSafeReports(secondData)}`);
@@ -24,7 +25,11 @@ console.log(`Answer 3 | The result of multiplication is: ${processMalformedData(
 console.log(`Answer 4 | The total XMAS found is: ${totalXmas}`);
 
 // Answer 5
-console.log(`The sum of middle pages is: ${fifthResult}`);
+console.log(`Answer 5 | The sum of middle pages is: ${fifthResult}`);
 
 // Answer 6
-console.log(`The number of distinct positions visited is: ${sixthResult}`);
+console.log(`Answer 6.1 | The number of distinct positions visited is: ${sixthResult}`);
+
+// Answer 6.2
+console.log(`Answer 6.2 | The number of distinct positions is: ${count}` );
+
