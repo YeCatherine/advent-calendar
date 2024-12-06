@@ -1,41 +1,42 @@
 /**
- * Count the number of safe reports.
- * @param reports - A list of reports where each report is a list of numbers.
+ * Helper function to check if a report is safe.
+ */
+const isSafe = (report: number[]): boolean => {
+  if (report.length < 2) return false;
+
+  let increasing = true;
+  let decreasing = true;
+
+  for (let i = 1; i < report.length; i++) {
+    const diff = report[i] - report[i - 1];
+
+    if (Math.abs(diff) < 1 || Math.abs(diff) > 3) return false;
+
+    if (diff > 0) decreasing = false;
+    if (diff < 0) increasing = false;
+  }
+
+  return increasing || decreasing;
+};
+
+/**
+ * 2.1
+ * Count the number of safe reports without using a Problem Dampener.
  */
 export function countSafeReports (reports: number[][]): number {
-  const isSafe = (report: number[]): boolean => {
-    if (report.length < 2) return false;
-
-    let increasing = true;
-    let decreasing = true;
-
-    for (let i = 1; i < report.length; i++) {
-      const diff = report[i] - report[i - 1];
-
-      // If difference is not in range [1, 3], the report is unsafe
-      if (Math.abs(diff) < 1 || Math.abs(diff) > 3) return false;
-
-      // Track trends
-      if (diff > 0) decreasing = false; // Not decreasing
-      if (diff < 0) increasing = false; // Not increasing
-    }
-
-    // Safe if strictly increasing or strictly decreasing
-    return increasing || decreasing;
-  };
-
-  // Count the number of safe reports
   return reports.reduce((count, report) => count + (isSafe(report) ? 1 : 0), 0);
 }
 
-// Example usage
-const exampleReports = [
-  [7, 6, 4, 2, 1], // Safe
-  [1, 2, 7, 8, 9], // Unsafe
-  [9, 7, 6, 2, 1], // Unsafe
-  [1, 3, 2, 4, 5], // Unsafe
-  [8, 6, 4, 4, 1], // Unsafe
-  [1, 3, 6, 7, 9]  // Safe
-];
+/**
+ * 2.2
+ * Count the number of safe reports, including those made safe by removing one level.
+ */
+export function countSafeReportsWithDampener (reports: number[][]): number {
+  const isSafeWithDampener = (report: number[]): boolean => {
+    if (isSafe(report)) return true;
 
-console.log("Expected: 2, Actual:", countSafeReports(exampleReports));
+    return report.some((_, i) => isSafe([...report.slice(0, i), ...report.slice(i + 1)]));
+  };
+
+  return reports.reduce((count, report) => count + (isSafeWithDampener(report) ? 1 : 0), 0);
+}

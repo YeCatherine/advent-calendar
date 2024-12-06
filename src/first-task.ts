@@ -1031,13 +1031,6 @@ const input = `
 `;
 
 const { left, right } = parseInputToColumns(input);
-console.log("Left column:", left);
-console.log("First left column element:", left[0]);
-console.log("Last left column element:", left.at(-1));
-
-console.log("Right column:", right);
-console.log("First right column element:", right[0]);
-console.log("Last right column element:", right.at(-1));
 
 /**
  * Calculate the total distance between two lists of numbers
@@ -1060,3 +1053,28 @@ export function calculateTotalDistance (leftList: number[], rightList: number[])
 
 const result = calculateTotalDistance(left, right);
 console.log(`Answer 1 | the total distance between the final inputs is: ${result}`);
+
+/**
+ * Calculate the total similarity score between two lists of numbers
+ * @param leftList
+ * @param rightList
+ */
+export function calculateSimilarityScore(leftList: number[], rightList: number[]): number {
+  const rightCountMap: Record<number, number> = {};
+
+  // Count occurrences of each number in the right list
+  for (const num of rightList) {
+    rightCountMap[num] = (rightCountMap[num] || 0) + 1;
+  }
+
+  // Calculate the similarity score
+  let similarityScore = 0;
+  for (const num of leftList) {
+    const count = rightCountMap[num] || 0; // Get the count of the number in the right list
+    similarityScore += num * count;
+  }
+
+  return similarityScore;
+}
+const result2 = calculateSimilarityScore(left, right);
+console.log(`Answer 1.2 | Similarity Score: ${result2}`);

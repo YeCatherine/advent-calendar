@@ -1,5 +1,5 @@
 import { calculateTotalDistance } from "./first-task";
-import { countSafeReports } from "./second/solution";
+import { countSafeReports, countSafeReportsWithDampener } from "./second/solution";
 import { processMalformedData } from "./third/solution";
 import { data as secondData } from "./second/data";
 import { totalXmas } from "./fourth/solution";
@@ -12,10 +12,12 @@ const leftList = [3, 4, 2, 1, 3, 3];
 const rightList = [4, 3, 5, 3, 9, 3];
 
 const result = calculateTotalDistance(leftList, rightList);
-console.log(`Answer 1 |The total distance between the lists is: ${result}`);
+console.log(`The total distance between the lists is: ${result}`);
 
 // Answer 2
 console.log(`Answer 2 | The number of safe reports is: ${countSafeReports(secondData)}`);
+console.log("Answer 2.2 | number of safe reports:", countSafeReportsWithDampener(secondData));
+
 
 // Answer 3
 const filePath = "./src/third/data.txt";

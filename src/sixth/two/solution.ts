@@ -100,6 +100,6 @@ const findObstructionPositions = (map: string[][]): { validPositions: [number, n
   return { validPositions, count: validPositions.length };
 };
 
-const map = parseMap("./src/sixth/two/exampleData.txt");
+const map = parseMap("./src/sixth/data.txt");
 export const { validPositions, count } = findObstructionPositions(map);
 // console.log("Valid positions:", validPositions);
